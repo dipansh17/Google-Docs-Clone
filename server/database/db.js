@@ -3,7 +3,7 @@ const Connection = async (
   username = "dipanshmalhotra11",
   password = "atqdWOO2vSBRInYH"
 ) => {
-  const URL = `mongodb+srv://${username}:${password}@google-docs-clone.syeouui.mongodb.net/?retryWrites=true&w=majority`;
+  const URL = `mongodb://localhost:27017/google-doc`;
   try {
     await mongoose.connect(URL, {
       useUnifiedTopology: true,

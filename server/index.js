@@ -8,11 +8,12 @@ const PORT = 9000;
 Connection();
 const io = new Server(PORT, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
 io.on("connection", (socket) => {
+  console.log("Connection Request received");
   socket.on("get-document", async (documentId) => {
     const document = await getDocument(documentId);
     socket.join(documentId);
