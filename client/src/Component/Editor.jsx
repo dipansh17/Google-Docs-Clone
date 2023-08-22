@@ -41,7 +41,8 @@ const Editor = () => {
     setQill(quillServer);
   }, []);
   useEffect(() => {
-    const socketServer = io("http://localhost:9000");
+    // const socketServer = io("http://localhost:9000");
+    const socketServer = io("https://sheetsserver.onrender.com");
     setSocket(socketServer);
     return () => {
       socketServer.disconnect();
