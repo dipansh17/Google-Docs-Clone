@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import styled from "@emotion/styled";
 import { io } from "socket.io-client";
 import { useParams } from "react-router-dom";
+import jsPDF from "jspdf";
 const Component = styled.div`
   background: #f5f5f5;
 `;
@@ -48,6 +49,18 @@ const Editor = () => {
       socketServer.disconnect();
     };
   }, []);
+  const handleDownload = () => {
+    const content = quill.getContents(); // Get Quill content
+    const doc = new jsPDF();
+
+    content.ops.forEach((op) => {
+      if (op.insert && typeof op.insert === "string") {
+        doc.text(op.insert, 10, 10); // Customize positioning as needed
+      }
+    });
+
+    doc.save("document.pdf"); // Save as PDF file
+  };
   useEffect(() => {
     if (socket === null || quill === null) return;
     const handleChange = (delta, oldData, source) => {
@@ -92,6 +105,9 @@ const Editor = () => {
   return (
     <Component>
       <Box className="container" id="container"></Box>
+      <Button onClick={handleDownload} variant="contained" color="primary">
+        Download as PDF
+      </Button>
     </Component>
   );
 };
