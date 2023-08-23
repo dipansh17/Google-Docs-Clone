@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Modal, TextField } from "@mui/material";
 import styled from "@emotion/styled";
 import { io } from "socket.io-client";
 import { useParams } from "react-router-dom";
@@ -61,6 +61,7 @@ const Editor = () => {
 
     doc.save("document.pdf"); // Save as PDF file
   };
+
   useEffect(() => {
     if (socket === null || quill === null) return;
     const handleChange = (delta, oldData, source) => {
@@ -105,7 +106,12 @@ const Editor = () => {
   return (
     <Component>
       <Box className="container" id="container"></Box>
-      <Button onClick={handleDownload} variant="contained" color="primary">
+      <Button
+        className="button"
+        onClick={handleDownload}
+        variant="contained"
+        color="primary"
+      >
         Download as PDF
       </Button>
     </Component>
