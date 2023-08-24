@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import "./Component/dark-mode.css";
 import Editor from "./Component/Editor";
 import {
   BrowserRouter as Router,

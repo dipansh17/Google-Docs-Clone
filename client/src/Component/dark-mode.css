@@ -1,0 +1,47 @@
+/* dark-mode.css */
+*{
+  margin: 0%;
+  padding:0%;
+}
+
+.dark-mode {
+    background-color: grey;
+    color: white;
+  }
+
+  .dark-mode .ql-container {
+    color: white;
+  }
+  .dark-mode .ql-toolbar {
+    background-color: #333;
+  }
+  .dark-mode .ql-toolbar button {
+    color: white;
+  }
+  .dark-mode.ql-toolbar.ql-snow{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* background-color:gray ; */
+    color: white;
+    border: none !important;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  }
+  /* Add more styles for dark mode as needed */
+
+  .dark-mode .container{
+    width: 60%;
+    background-color: grey;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    margin: 10px auto 10px auto !important;
+    min-height: 100vh;
+  }  
+  .dark-mode.button1{
+    background-color: gainsboro  !important;
+    position: absolute !important;
+    top: 5%;
+    right: 5%;
+    
+  }

@@ -1,3 +1,6 @@
+.body{
+  background-color: grey;
+}
 .container{
   width: 60%;
   background-color: white;
@@ -14,4 +17,17 @@
   background-color:wheat ;
   border: none !important;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+.button1{
+  background-color: red !important;
+  position: absolute !important;
+  top: 5%;
+  right: 5%;
+  
+}
+.dark{
+  background-color: orchid !important;
+  position: absolute !important;
+  top: 5%;
+  left: 5%;
 }
